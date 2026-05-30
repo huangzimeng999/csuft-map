@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>中南林业科技大学 - 校园地图</title>
+    <link rel="stylesheet" href="css/style.css">
+    <!-- 高德地图 API -->
+    <script src="https://webapi.amap.com/maps?v=2.0&key=YOUR_AMAP_KEY"></script>
+</head>
+<body>
+    <div class="container">
+        <!-- 头部 -->
+        <header class="header">
+            <h1>🗺️ 中南林业科技大学校园地图</h1>
+            <p class="subtitle">为新生提供清晰方位导航</p>
+        </header>
+
+        <!-- 搜索栏 -->
+        <div class="search-container">
+            <input 
+                type="text" 
+                id="searchInput" 
+                class="search-box" 
+                placeholder="搜索建筑物... 例如：图书馆、食堂"
+            >
+            <button id="searchBtn" class="search-btn">🔍 搜索</button>
+        </div>
+
+        <!-- 主要内容 -->
+        <div class="main-content">
+            <!-- 地图容器 -->
+            <div id="map" class="map-container"></div>
+
+            <!-- 侧边栏 - 建筑物列表 -->
+            <div class="sidebar">
+                <div class="sidebar-header">
+                    <h3>📍 校园建筑</h3>
+                </div>
+                <div id="buildingList" class="building-list">
+                    <!-- 建筑物将由 JavaScript 动态生成 -->
+                </div>
+            </div>
+        </div>
+
+        <!-- 信息面板 -->
+        <div id="infoPanel" class="info-panel">
+            <div class="info-header">
+                <h3 id="buildingName">建筑信息</h3>
+                <button class="close-btn" onclick="closeInfoPanel()">✕</button>
+            </div>
+            <div class="info-content">
+                <p><strong>类别：</strong> <span id="buildingType">-</span></p>
+                <p><strong>坐标：</strong> <span id="buildingCoord">-</span></p>
+                <p><strong>描述：</strong> <span id="buildingDesc">-</span></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 脚本 -->
+    <script src="js/data.js"></script>
+    <script src="js/map.js"></script>
+</body>
+</html>
